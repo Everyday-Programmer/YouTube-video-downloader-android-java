@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/toolbar"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar"
+        android:layout_marginTop="40sp"
+        android:id="@+id/inputLayout"
+        android:orientation="horizontal">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".8"
+            android:layout_marginStart="20sp"
+            android:layout_marginEnd="10sp"
+            android:hint="Video URL"
+            style="@style/Widget.Material3.TextInputLayout.FilledBox.Dense"
+            app:boxCornerRadiusTopStart="10sp"
+            app:boxCornerRadiusTopEnd="10sp"
+            app:boxCornerRadiusBottomStart="10sp"
+            app:boxCornerRadiusBottomEnd="10sp"
+            app:boxStrokeWidthFocused="0sp"
+            app:boxStrokeWidth="0sp"
+            android:id="@+id/urlLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textWebEditText"
+                android:id="@+id/urlET"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:layout_width="0sp"
+            android:layout_height="match_parent"
+            android:layout_weight=".14"
+            app:elevation="0sp"
+            android:layout_marginEnd="20sp"
+            android:src="@drawable/baseline_navigate_next_24"
+            android:id="@+id/nextBtn"/>
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/inputLayout">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="8sp"
+            app:cardElevation="4sp"
+            app:strokeWidth="0sp"
+            android:visibility="gone"
+            android:layout_margin="16sp"
+            android:id="@+id/videoCardView">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16sp"
+                android:id="@+id/linearLayout">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="200sp"
+                    android:scaleType="centerCrop"
+                    android:id="@+id/videoThumbnail"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/videoTitle"
+                    android:layout_marginTop="8sp"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/videoUploader"
+                    android:layout_marginTop="8sp"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/darker_gray"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/videoDuration"
+                    android:layout_marginTop="8sp"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/darker_gray"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/videoViewCount"
+                    android:layout_marginTop="8sp"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/darker_gray"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/videoLikeCount"
+                    android:layout_marginTop="8sp"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/darker_gray"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/videoDislikeCount"
+                    android:layout_marginTop="8sp"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/darker_gray"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/videoUploadDate"
+                    android:layout_marginTop="8sp"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/darker_gray"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/videoDescription"
+                    android:layout_marginTop="8sp"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"/>
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </ScrollView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/outline_file_download_24"
+        android:layout_margin="16sp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/download"
+        android:visibility="gone"/>
+
+</RelativeLayout>
