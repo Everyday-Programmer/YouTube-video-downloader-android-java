@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  yt-api:
+    build: .
+    ports:
+      - "5000:5000"
+    environment:
+      - FLASK_APP=app.py
+    volumes:
+      - .:/app
+    command: flask run --host=0.0.0.0
